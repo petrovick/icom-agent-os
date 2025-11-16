@@ -110,6 +110,12 @@ The static variant (`generate-static-payment-mock.bs.ts` + `generate-static-paym
 -  - `samples/PACS008.xlsx` & `samples/PACS002.xlsx` — annotated examples describing required fields, data types, and business rules.
 - Keep these files synchronized with whatever schemas the `XmlHandler` validates against so future specs/tests reference an authoritative payload.
 
+### Local Validation & Docker
+
+- The entire stack must remain runnable via Docker Compose (or equivalent container tooling) so engineers can validate Pix flows locally.
+- Compose file should bring up Express API nodes, Redis cluster, Cassandra (or Localstack), and supporting queues with seed data matching the samples above.
+- Local runs should expose smoke-test scripts that replay the validation scenarios (reduced scale) to verify ordering, XML batching, and observability before promoting changes.
+
 ## Observability & Telemetry
 
 - **Metrics**: Controllers and interactors emit counters/timers through `TelemetryHandler` (OpenTelemetry exporter). Minimum set: request rate per ISPB, queue depth/lag, cursor churn, XML schema failures, thread slot usage, and rate-limit hits. Dashboards in OpenSearch/Grafana consume these metrics for SLA tracking.
