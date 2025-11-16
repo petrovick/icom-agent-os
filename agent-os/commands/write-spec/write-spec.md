@@ -121,6 +121,7 @@ IMPORTANT: Ensure that the specification document's content is ALIGNED and DOES 
 @agent-os/standards//backend/migrations.md
 @agent-os/standards//backend/models.md
 @agent-os/standards//backend/queries.md
+@agent-os/standards//backend/architecture.md
 @agent-os/standards//frontend/accessibility.md
 @agent-os/standards//frontend/components.md
 @agent-os/standards//frontend/css.md
