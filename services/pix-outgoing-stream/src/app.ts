@@ -4,6 +4,7 @@ import { requestId } from './middlewares/requestId';
 import { mtlsAuth } from './middlewares/mtlsAuth';
 import { notFound, errorHandler } from './middlewares/errorHandler';
 import { healthRouter } from './routes/health';
+import { buildStreamRouter } from './routes/stream';
 
 export const createApp = () => {
   const app = express();
@@ -14,6 +15,7 @@ export const createApp = () => {
   app.use(mtlsAuth);
 
   app.use('/health', healthRouter);
+  app.use('/api/v1/out', buildStreamRouter());
 
   app.use(notFound);
   app.use(errorHandler);

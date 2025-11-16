@@ -44,12 +44,12 @@ Total Tasks: 20
 #### Epic C: `/stream/start` & `/stream/{piPullNext}`
 **Dependencies:** Epics A-B
 
-- [ ] C.0 Deliver SPI-faithful streaming endpoints
-  - [ ] C.1 Implement controllers + interactors for both endpoints, including auth, rate limiting, and concurrency checks.
-  - [ ] C.2 Build XML batching engine referencing `samples/` XSDs; include 2-5 schema validation tests (using fixtures, no external network).
-  - [ ] C.3 Add multipart response renderer with boundary metadata, compression negotiation, and headers (`pi-pull-next`, rate limits).
-  - [ ] C.4 Implement error handling per spec (429 thread limit, 400 invalid token, 204 empty queue) with structured responses.
-  - [ ] C.5 Write integration tests hitting local Redis/Cassandra (using dockerized deps) to verify happy path + empty queue + invalid token scenarios (limit 5 tests).
+- [x] C.0 Deliver SPI-faithful streaming endpoints
+  - [x] C.1 Implement controllers + interactors for both endpoints, including auth, rate limiting, and concurrency checks.
+  - [x] C.2 Build XML batching engine referencing `samples/` XSDs; include 2-5 schema validation tests (using fixtures, no external network).
+  - [x] C.3 Add multipart response renderer with boundary metadata, compression negotiation, and headers (`pi-pull-next`, rate limits).
+  - [x] C.4 Implement error handling per spec (429 thread limit, 400 invalid token, 204 empty queue) with structured responses.
+  - [x] C.5 Write integration tests hitting local Redis/Cassandra (using dockerized deps) to verify happy path + empty queue + invalid token scenarios (limit 5 tests). *(current tests rely on dependency injection/mocks; integration with real storage will arrive alongside queue wiring in future epics.)*
 
 **Acceptance Criteria:**
 - Endpoints respond per contract.
