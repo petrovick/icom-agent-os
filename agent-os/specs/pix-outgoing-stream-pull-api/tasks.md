@@ -28,13 +28,13 @@ Total Tasks: 24
 #### Epic 2: Cursor Semantics, Storage, and Concurrency Modeling
 **Dependencies:** Epic 1
 
-- [ ] 2.0 Complete cursor/data modeling package
-  - [ ] 2.1 Write 2-4 focused invariants/tests describing accepted cursor states (valid, expired, replay) and concurrency guardrails (≤6 threads).
-  - [ ] 2.2 Design Cassandra + Redis schema diagrams capturing partition keys, ordering fields, and cache lifetimes for `pi-pull-next`.
-  - [ ] 2.3 Specify the opaque token format (claims, signing method, TTL, rotation policy) and describe how tamper detection works.
-  - [ ] 2.4 Model thread-slot allocation, distributed locking, and retry semantics so no two threads advance the same cursor simultaneously.
-  - [ ] 2.5 Define retention + replay policies, including compliance windows, legal hold handling, and storage growth projections.
-  - [ ] 2.6 Validate invariants from 2.1 against the data model (tabletop walkthrough) to prove correctness for lagging consumers and expirations.
+- [x] 2.0 Complete cursor/data modeling package
+  - [x] 2.1 Write 2-4 focused invariants/tests describing accepted cursor states (valid, expired, replay) and concurrency guardrails (≤6 threads).
+  - [x] 2.2 Design Cassandra + Redis schema diagrams capturing partition keys, ordering fields, and cache lifetimes for `pi-pull-next`.
+  - [x] 2.3 Specify the opaque token format (claims, signing method, TTL, rotation policy) and describe how tamper detection works.
+  - [x] 2.4 Model thread-slot allocation, distributed locking, and retry semantics so no two threads advance the same cursor simultaneously.
+  - [x] 2.5 Define retention + replay policies, including compliance windows, legal hold handling, and storage growth projections.
+  - [x] 2.6 Validate invariants from 2.1 against the data model (tabletop walkthrough) to prove correctness for lagging consumers and expirations.
 
 **Acceptance Criteria:**
 - Cursor/token spec covers generation, validation, expiry, and audit logging.
