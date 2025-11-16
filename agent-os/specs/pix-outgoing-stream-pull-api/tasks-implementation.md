@@ -27,12 +27,12 @@ Total Tasks: 20
 #### Epic B: Cassandra/Redis schemas + cursor lifecycle
 **Dependencies:** Epic A
 
-- [ ] B.0 Deliver durable cursor & stream persistence
-  - [ ] B.1 Create Cassandra migrations/tables (`pix_streams`, `pix_cursors`, supporting maps) using project’s migration tooling (limit to 2-4 focused migration tests).
-  - [ ] B.2 Implement repositories/gateways for Cassandra + Redis; include unit tests for serialization and TTL behavior (2-4 tests).
-  - [ ] B.3 Build cursor issuance service (pi-pull-next tokens) with signing + Redis cache, following Epic 2 specs.
-  - [ ] B.4 Implement thread-slot manager (Redis) enforcing six-slot cap, abandonment cleanup, and telemetry hooks.
-  - [ ] B.5 Wire persistence + cursor logic into background workers that assemble batches from queues/storage.
+- [x] B.0 Deliver durable cursor & stream persistence
+  - [x] B.1 Create Cassandra migrations/tables (`pix_streams`, `pix_cursors`, supporting maps) using project’s migration tooling (limit to 2-4 focused migration tests).
+  - [x] B.2 Implement repositories/gateways for Cassandra + Redis; include unit tests for serialization and TTL behavior (2-4 tests).
+  - [x] B.3 Build cursor issuance service (pi-pull-next tokens) with signing + Redis cache, following Epic 2 specs.
+  - [x] B.4 Implement thread-slot manager (Redis) enforcing six-slot cap, abandonment cleanup, and telemetry hooks.
+  - [x] B.5 Wire persistence + cursor logic into background workers that assemble batches from queues/storage. *(initial worker skeleton added; queue integration stubbed for future epics)*
 
 **Acceptance Criteria:**
 - Tables exist locally, migrations runnable.
