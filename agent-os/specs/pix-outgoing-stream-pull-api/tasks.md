@@ -10,13 +10,13 @@ Total Tasks: 24
 #### Epic 1: High-Throughput Architecture Blueprint
 **Dependencies:** None
 
-- [ ] 1.0 Complete systems architecture planning
-  - [ ] 1.1 Write 3-5 focused validation tests (scenario outlines) that stress million-RPM workloads, multi-region failover, and steady-state polling cadence.
-  - [ ] 1.2 Document the component-responsibility matrix (API layer, load balancer, Redis cache, Cassandra tiers) showing ownership of ordering, batching, and resiliency.
-  - [ ] 1.3 Produce capacity and sharding plan that quantifies node counts, per-partition throughput, and headroom for bursts.
-  - [ ] 1.4 Define cross-region replication and deterministic partition ownership strategy to keep ISPB ordering intact during failover.
-  - [ ] 1.5 Capture failure-domain playbooks (cache loss, Cassandra partial outage, load balancer saturation) with mitigation actions.
-  - [ ] 1.6 Review the validation scenarios from 1.1 to ensure the blueprint meets latency (<200ms p99) and million RPM targets without violating constraints.
+- [x] 1.0 Complete systems architecture planning
+  - [x] 1.1 Write 3-5 focused validation tests (scenario outlines) that stress million-RPM workloads, multi-region failover, and steady-state polling cadence.
+  - [x] 1.2 Document the component-responsibility matrix (API layer, load balancer, Redis cache, Cassandra tiers) showing ownership of ordering, batching, and resiliency.
+  - [x] 1.3 Produce capacity and sharding plan that quantifies node counts, per-partition throughput, and headroom for bursts.
+  - [x] 1.4 Define cross-region replication and deterministic partition ownership strategy to keep ISPB ordering intact during failover.
+  - [x] 1.5 Capture failure-domain playbooks (cache loss, Cassandra partial outage, load balancer saturation) with mitigation actions.
+  - [x] 1.6 Review the validation scenarios from 1.1 to ensure the blueprint meets latency (<200ms p99) and million RPM targets without violating constraints.
 
 **Acceptance Criteria:**
 - Architecture document traces every requirement from the spec to a responsible component.
