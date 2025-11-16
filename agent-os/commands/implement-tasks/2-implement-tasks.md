@@ -50,6 +50,7 @@ IMPORTANT: Ensure that the tasks list is ALIGNED and DOES NOT CONFLICT with the 
 @agent-os/standards//backend/migrations.md
 @agent-os/standards//backend/models.md
 @agent-os/standards//backend/queries.md
+@agent-os/standards//backend/architecture.md
 @agent-os/standards//frontend/accessibility.md
 @agent-os/standards//frontend/components.md
 @agent-os/standards//frontend/css.md
