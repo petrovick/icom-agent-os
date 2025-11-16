@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 import { CursorRepository } from '../repositories/cursorRepository';
-import { TokenPayload, generateToken } from './tokenService';
+import { TokenPayload, generateToken, verifyToken } from './tokenService';
 
 export class CursorService {
   constructor(private readonly repo: CursorRepository) {}
@@ -34,5 +34,9 @@ export class CursorService {
       piPullNextId: randomUUID(),
     });
     return piPullNext;
+  }
+
+  verify(piPullNext: string) {
+    return verifyToken(piPullNext);
   }
 }
