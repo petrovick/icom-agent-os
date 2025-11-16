@@ -46,13 +46,13 @@ Total Tasks: 24
 #### Epic 3: Endpoint & Payload Design
 **Dependencies:** Epics 1-2
 
-- [ ] 3.0 Complete API contract documentation
-  - [ ] 3.1 Write 2-5 focused contract tests (sequence diagrams) for `/stream/start` and `/stream/{piPullNext}` covering happy path, empty queue (204), invalid cursor (400), and concurrency limit (429).
-  - [ ] 3.2 Produce detailed request/response specs (headers, status codes, rate-limit metadata) consistent with backend/api.md.
-  - [ ] 3.3 Define XML boundary structure (Content-Type, boundary markers, message metadata) and include sample annotated payloads (no code).
-  - [ ] 3.4 Outline error-handling matrix mapping failure modes (schema validation, expired cursor, throttled thread) to responses and observability hooks.
-  - [ ] 3.5 Describe compression negotiation, idempotency expectations, and how clients resume from last-known cursor after downtime.
-  - [ ] 3.6 Review the contract tests from 3.1 to confirm XML batching (≤10 messages) and boundary semantics satisfy SPI compatibility requirements.
+- [x] 3.0 Complete API contract documentation
+  - [x] 3.1 Write 2-5 focused contract tests (sequence diagrams) for `/stream/start` and `/stream/{piPullNext}` covering happy path, empty queue (204), invalid cursor (400), and concurrency limit (429).
+  - [x] 3.2 Produce detailed request/response specs (headers, status codes, rate-limit metadata) consistent with backend/api.md.
+  - [x] 3.3 Define XML boundary structure (Content-Type, boundary markers, message metadata) and include sample annotated payloads (no code).
+  - [x] 3.4 Outline error-handling matrix mapping failure modes (schema validation, expired cursor, throttled thread) to responses and observability hooks.
+  - [x] 3.5 Describe compression negotiation, idempotency expectations, and how clients resume from last-known cursor after downtime.
+  - [x] 3.6 Review the contract tests from 3.1 to confirm XML batching (≤10 messages) and boundary semantics satisfy SPI compatibility requirements.
 
 **Acceptance Criteria:**
 - Endpoint documentation is precise enough to drive an OpenAPI doc later without ambiguity.
