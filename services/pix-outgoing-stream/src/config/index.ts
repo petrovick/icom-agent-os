@@ -14,6 +14,7 @@ export type AppConfig = {
     caCertPath?: string;
     keyPath?: string;
     certPath?: string;
+    tokenSecret: string;
   };
   telemetry: {
     serviceName: string;
@@ -21,6 +22,9 @@ export type AppConfig = {
   infra: {
     redisUrl: string;
     cassandraContactPoint: string;
+    cassandraKeyspace: string;
+    streamTable: string;
+    cursorTable: string;
   };
 };
 
@@ -40,6 +44,7 @@ export const config: AppConfig = {
     caCertPath: resolveOptionalPath(process.env.MTLS_CA_PATH),
     keyPath: resolveOptionalPath(process.env.TLS_KEY_PATH),
     certPath: resolveOptionalPath(process.env.TLS_CERT_PATH),
+    tokenSecret: process.env.PI_PULL_NEXT_SECRET ?? 'changeme-secret',
   },
   telemetry: {
     serviceName: process.env.SERVICE_NAME ?? 'pix-outgoing-stream',
@@ -47,5 +52,8 @@ export const config: AppConfig = {
   infra: {
     redisUrl: process.env.REDIS_URL ?? 'redis://localhost:6379',
     cassandraContactPoint: process.env.CASSANDRA_CONTACT_POINT ?? 'cassandra:9042',
+    cassandraKeyspace: process.env.CASSANDRA_KEYSPACE ?? 'pix_streams',
+    streamTable: process.env.CASSANDRA_STREAM_TABLE ?? 'pix_streams',
+    cursorTable: process.env.CASSANDRA_CURSOR_TABLE ?? 'pix_cursors',
   },
 };
