@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+  api:
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+      - HOST=0.0.0.0
+      - REDIS_URL=redis://redis:6379
+      - CASSANDRA_CONTACT_POINT=cassandra:9042
+      - MTLS_REQUIRED=false
+      - MTLS_HEADER_SIMULATION=true
+    depends_on:
+      - redis
+      - cassandra
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+  cassandra:
+    image: cassandra:4.1
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=pix-cluster
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=256M

@@ -10,12 +10,12 @@ Total Tasks: 20
 #### Epic A: Service & Infrastructure Bootstrap
 **Dependencies:** None
 
-- [ ] A.0 Stand up the runnable service skeleton
-  - [ ] A.1 Provision Node/Express service using existing scaffolding; wire mTLS auth middleware and request ID propagation.
-  - [ ] A.2 Write 2-4 smoke tests (e.g., health endpoint, authentication rejection) and run only those tests.
-  - [ ] A.3 Create Docker Compose (API + Redis + Cassandra/Localstack) with seeded configs; document run instructions.
-  - [ ] A.4 Implement configuration loading (env + secrets) for queue/table names, rate limits, and signing keys.
-  - [ ] A.5 Ensure service boots locally, returns health 200, and logs structured entries.
+- [x] A.0 Stand up the runnable service skeleton
+  - [x] A.1 Provision Node/Express service using existing scaffolding; wire mTLS auth middleware and request ID propagation.
+  - [x] A.2 Write 2-4 smoke tests (e.g., health endpoint, authentication rejection) and run only those tests.
+  - [x] A.3 Create Docker Compose (API + Redis + Cassandra/Localstack) with seeded configs; document run instructions.
+  - [x] A.4 Implement configuration loading (env + secrets) for queue/table names, rate limits, and signing keys.
+  - [x] A.5 Ensure service boots locally, returns health 200, and logs structured entries.
 
 **Acceptance Criteria:**
 - Service starts via `npm run dev` and `docker compose up`.
